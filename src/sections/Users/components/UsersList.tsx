@@ -7,7 +7,7 @@ function UsersList ({ userData }: { userData: Contact[] }) {
       <div className="scroll-container">
         <ul className="users-list">
           {userData?.map((user) => (
-            <UsersListItem user={user} />
+            <UsersListItem key={user.id} user={user} />
           ))}
         </ul>
       </div>

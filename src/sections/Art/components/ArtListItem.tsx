@@ -3,7 +3,7 @@ import { Art, baseUrl } from "..";
 import PublicationHistoryList from "./PublicationHistoryList";
 
 function ArtListItem({ art }: { art: Art; }) {
-  console.log(art.imageURL);
+ 
   return (
     <li>
       <div className="frame">

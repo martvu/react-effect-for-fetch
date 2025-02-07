@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UsersList from "./components/UsersList";
+import useFetchData from "../../hooks/useFetchData";
 
 export interface Contact {
   id: number;
@@ -18,22 +19,12 @@ export interface Contact {
 
 function UsersSection() {
   const url = "https://boolean-uk-api-server.fly.dev/martvu/contact";
-  const [userData, setUserData] = useState<Contact[]>([]);
+  const { data } = useFetchData<Contact[]>(url, []);
 
-  const fetchData = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setUserData(data);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-  console.log(userData);
   return (
     <section>
       <h2>Users Section</h2>
-      <UsersList userData={userData} />
+      <UsersList userData={data} />
     </section>
   );
 }

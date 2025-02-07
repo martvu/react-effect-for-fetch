@@ -4,7 +4,7 @@ import { AdviceSlipData } from "..";
 function FavouriteSlipsList({
     favouriteSlips,
   }: {
-    favouriteSlips: AdviceSlipData[];
+    favouriteSlips: AdviceSlipData["slip"][];
   }) {
     return (
       <section className="favourtite-slips-list">
