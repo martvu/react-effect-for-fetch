@@ -1,8 +1,8 @@
 import React from "react";
-import { Art } from "..";
+import { Art, baseUrl } from "..";
 import PublicationHistoryList from "./PublicationHistoryList";
 
-function ArtListItem({ art, baseUrl }: { art: Art; baseUrl: string }) {
+function ArtListItem({ art }: { art: Art; }) {
   console.log(art.imageURL);
   return (
     <li>

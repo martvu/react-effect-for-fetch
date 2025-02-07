@@ -8,9 +8,9 @@ export interface Art {
   publicationHistory: string[];
   title: string;
 }
+export const baseUrl = "https://boolean-uk-api-server.fly.dev";
 
 function ArtsSection() {
-  const baseUrl = "https://boolean-uk-api-server.fly.dev";
   const artUrl = `${baseUrl}/art`;
   const [artData, setArtData] = useState<Art[]>([]);
 
@@ -28,7 +28,7 @@ function ArtsSection() {
   return (
     <section>
       <h2>Arts Section</h2>
-      <ArtList artData={artData} baseUrl={baseUrl} />
+      <ArtList artData={artData}/>
     </section>
   );
 }
